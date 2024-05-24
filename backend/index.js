@@ -1,7 +1,6 @@
 import express from "express";
-import { rootRouter } from "./routes/index";
+import  rootRouter  from "./routes/index.js";
 import cors from "cors";
-import jwt from "jsonwebtoken";
 
 const app = express();
 
@@ -11,6 +10,12 @@ app.use(express.json());
 app.use('/api/v1', rootRouter);
 
 
-
-app.listen(3000);
+app.get('/', (req, res) => {
+    res.json({
+        message : "on the root"
+    })
+})
+app.listen(3000, () => {
+    console.log(`server is working on PORT : ${3000}`);
+});
 

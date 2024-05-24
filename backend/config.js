@@ -1,3 +1,4 @@
-module.exports = {
-    JWT_SECRET: "sfkdjflalfaklj"
-}
+
+const JWT_SECRET = "sfkdjflalfaklj"
+
+export {JWT_SECRET}

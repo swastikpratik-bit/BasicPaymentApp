@@ -1,5 +1,11 @@
 import mongoose from "mongoose";
 
+mongoose
+    .connect("mongodb+srv://swastiksingh368:IEa1avoK1xQUuvrK@cluster0.k0vd22v.mongodb.net/paymentApp")
+    .then((it) => console.log(`Database Connected with HOST : ${it.connection.host}`))
+    .catch((e) => console.log(e));
+
+
 const userSchema = new mongoose.Schema({
     username: {
         type: String,

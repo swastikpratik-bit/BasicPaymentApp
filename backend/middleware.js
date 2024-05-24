@@ -1,4 +1,4 @@
-import { JWT_SECRET } from "./config"
+import { JWT_SECRET } from "./config.js"
 import jwt from "jsonwebtoken";
 
 export const authMiddleware = (req, res, next) => {
@@ -15,7 +15,7 @@ export const authMiddleware = (req, res, next) => {
         req.userId = decoded.userId;
         next(); 
     } catch (error) {
-        return res.status(403).json({});
+        return res.status(403).json({message  : "can't authorize"});
     }
 
 }
